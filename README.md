@@ -15,19 +15,15 @@ The SHAM POS System is a Point-of-Sale application developed using Python and Tk
 1. Clone the repository:
    ```bash
    git clone https://github.com/shambat/POS.git
-Change directory:
-
-
-2. cd POS
-Update package lists:
-
-
-3. sudo apt update
-Install Python 3 and Tkinter:
-
-
-4. sudo apt install python3 python3-tk
+2. Change directory:
+   ```bash
+   cd POS
+3. Update package lists:
+   ```bash
+   sudo apt update
+4. Install Python 3 and Tkinter:
+    ```bash
+    sudo apt install python3 python3-tk
 # Run the application:
-
-
+```
 python3 pos_system.py
