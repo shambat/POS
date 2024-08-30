@@ -25,5 +25,8 @@ The SHAM POS System is a Point-of-Sale application developed using Python and Tk
     ```bash
     sudo apt install python3 python3-tk
 # Run the application:
-```
-python3 pos_system.py
+     ```
+     python3 pos_system.py
+# Contact Information
+For further inquiries or support, please connect via LinkedIn:
+LinkedIn: [Muhammad Ehtisham](https://www.linkedin.com/in/ehtishamcyber/)
