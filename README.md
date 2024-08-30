@@ -9,8 +9,13 @@ The SHAM POS System is a Point-of-Sale application developed using Python and Tk
 - **Checkout**: Finalize purchases and record transactions in a CSV file.
 - **Display Modes**: Switch between fullscreen and windowed modes.
 - **Modern Design**: Clean and minimal interface with a professional color scheme.
+## For Windows Installisation
 
-## Installation
+To install the application on Windows, download and run the installer from the following link:
+
+[Download POS Windows Installer](https://github.com/shambat/POS/raw/main/POSWinApp.exe)
+
+## For Linux Installation
 
 1. Clone the repository:
    ```bash
