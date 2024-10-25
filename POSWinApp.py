@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, Toplevel, Listbox
 import csv
 from datetime import datetime
 
@@ -37,6 +37,10 @@ class POSApp:
         
         self.quit_button = tk.Button(self.control_frame, text="Quit", command=self.quit_app, bg="#e74c3c", fg=self.button_text_color, font=("Arial", 12), activebackground="#c0392b", relief="raised", padx=5, pady=3)
         self.quit_button.pack(side=tk.LEFT, padx=5)
+        
+        # Record Button
+        self.record_button = tk.Button(self.control_frame, text="Record", command=self.show_records, bg=self.button_bg_color, fg=self.button_text_color, font=("Arial", 12), activebackground=self.button_hover_bg_color, relief="raised", padx=5, pady=3)
+        self.record_button.pack(side=tk.LEFT, padx=5)
 
         # Product Entry Frame
         self.product_frame = tk.Frame(self.root, bg=self.bg_color)
@@ -136,6 +140,22 @@ class POSApp:
             writer = csv.writer(file)
             writer.writerow([purchase_time, amount])
 
+    def show_records(self):
+        record_window = Toplevel(self.root)
+        record_window.title("Purchase Records")
+        record_window.geometry("400x400")
+        
+        listbox = Listbox(record_window, width=60, height=20)
+        listbox.pack(pady=10)
+        
+        try:
+            with open('purchase_records.csv', mode='r') as file:
+                reader = csv.reader(file)
+                for row in reader:
+                    listbox.insert(tk.END, f"Date: {row[0]} | Amount: ${row[1]}")
+        except FileNotFoundError:
+            messagebox.showwarning("No Records", "No previous records found.")
+
     def clear_entries(self):
         self.product_name.delete(0, tk.END)
         self.quantity.delete(0, tk.END)
@@ -143,6 +163,7 @@ class POSApp:
 
     def quit_app(self):
         self.root.quit()
+        self.root.destroy()
 
 if __name__ == "__main__":
     root = tk.Tk()
